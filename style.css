@@ -505,6 +505,41 @@ p {
   font-size: 0.95rem;
 }
 
+.source-intro {
+  margin-top: 0.9rem;
+  max-width: 46rem;
+}
+
+.source-group + .source-group {
+  margin-top: 1.85rem;
+}
+
+.source-group > h3 {
+  margin: 0 0 0.75rem;
+  color: var(--ember);
+  font-size: 0.92rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+a.card-source {
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.source-foot {
+  margin-top: 1.6rem;
+  max-width: 46rem;
+  color: var(--dim);
+}
+
+.source-foot + .source-foot {
+  margin-top: 0.7rem;
+  color: var(--parchment);
+}
+
 .contact {
   padding-top: 1rem;
 }
@@ -663,3 +698,5 @@ p {
 
 .hero-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.4rem;padding:0;max-width:34rem}
 .hero-tags li{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#e8dcc4;border:1px solid rgba(179,32,28,.7);background:rgba(10,8,8,.55);padding:.25rem .55rem}
+
+.mission{font-size:1.15rem;color:#e8dcc4;border-left:2px solid #b3201c;padding-left:.8rem;margin:1rem 0}
