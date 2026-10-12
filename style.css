@@ -660,3 +660,6 @@ p {
     scroll-behavior: auto;
   }
 }
+
+.hero-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.4rem;padding:0;max-width:34rem}
+.hero-tags li{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#e8dcc4;border:1px solid rgba(179,32,28,.7);background:rgba(10,8,8,.55);padding:.25rem .55rem}
