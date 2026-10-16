@@ -1155,3 +1155,6 @@ html.js .card.reveal.is-visible:focus-within {
 .card-openshield h3 { padding-right: 72px; min-height: 44px; }
 .footer-mascot { display: flex; align-items: center; gap: .6rem; }
 .footer-mascot img { width: 48px; height: 42px; image-rendering: pixelated; }
+
+/* Keep section labels clear of the fixed header when jumping from the nav. */
+section[id] { scroll-margin-top: 88px; }
