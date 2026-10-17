@@ -1150,9 +1150,22 @@ html.js .card.reveal.is-visible:focus-within {
 }
 
 /* Knight A, the company mascot. Animated SVGs hold their first frame under reduced motion. */
-.card-openshield { position: relative; }
-.card-knight { position: absolute; top: 12px; right: 12px; width: 64px; height: 56px; image-rendering: pixelated; }
-.card-openshield h3 { padding-right: 72px; min-height: 44px; }
+/* Fixed in the bottom-left corner on every page; decorative, never takes clicks. */
+.corner-knight {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 20;
+  width: 80px;
+  height: 70px;
+  image-rendering: pixelated;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .55));
+}
+@media (max-width: 860px) { .corner-knight { width: 64px; height: 56px; left: .6rem; bottom: .6rem; } }
+@media (max-width: 480px) { .corner-knight { display: none; } }
+@media print { .corner-knight { display: none; } }
 .footer-mascot { display: flex; align-items: center; gap: .6rem; }
 .footer-mascot img { width: 48px; height: 42px; image-rendering: pixelated; }
 
