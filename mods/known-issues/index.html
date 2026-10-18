@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#141312">
+  <title>Known issues &amp; fixes: Skyrim mods — Blackshield Company</title>
+  <meta name="description" content="Known issues, fixes and workarounds for the Blackshield Company Skyrim Special Edition mods by synthalorian.">
+  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-180.png" sizes="180x180">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ===== SECTION: NAV ===== -->
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <span class="crest"><img src="/assets/img/crest.webp" alt="Blackshield Company crest, a black shield with a red cross" width="512" height="512"></span>
+        <span class="brand-name">Blackshield Company</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#shop">Shop</a>
+        <a href="/#apps">Apps</a>
+        <a href="/#mods">Mods</a>
+        <a href="/#source">Source</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== END SECTION: NAV ===== -->
+
+  <main id="main" class="section">
+    <div class="wrap ki">
+      <div class="section-head">
+        <p class="eyebrow">Skyrim mods — Support</p>
+        <h1>Known issues &amp; fixes</h1>
+        <p class="note">For the Blackshield Company Skyrim SE mods. <a href="/#mods">Back to all mods</a></p>
+      </div>
+<p>Mods by <strong>synthalorian</strong> (Blackshield Company) for Skyrim Special Edition.</p>
+<p><em>Last updated: 17 Oct 2026</em></p>
+<p>All of our mods are early beta. They pass our automated build checks but haven't been fully playtested in game, so player reports matter a lot. Updates are save-safe unless a fix says otherwise. Make a fresh save before you update, just in case.</p>
+<p><strong>Translators:</strong> always build from the latest version. A translated plugin saved from an older version overrides the newer fixes and brings old bugs back. Keep text tags such as <code>&lt;Global=TTC_BribeGold&gt;</code> or <code>&lt;Alias=...&gt;</code> exactly as written, and translate the words around them.</p>
+<h2 id="open-issues-at-a-glance">Open issues at a glance</h2>
+<div class="ki-table"><table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Issue</th>
+<th>Affected</th>
+<th>Fixed in</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Company Quartermaster</td>
+<td>Brynja's face or skin colour not matching</td>
+<td>0.2.1, 0.2.2</td>
+<td>0.2.4 (fix shipped)</td>
+<td><strong>Open</strong>: waiting for the reporter to confirm</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every other issue listed below is fixed. Update to the current version to get the fix.</p>
+<hr />
+<h2 id="the-turncoat-contract">The Turncoat Contract</h2>
+<p><strong>Current version: 0.1.4</strong> (16 Oct 2026)</p>
+<h3>Corporal Vane's bribe line shows <code>&lt;Global=TTC_BribeGold&gt;</code> instead of a gold amount</h3>
+<ul>
+<li><strong>Symptom:</strong> When you talk to Corporal Vane, her line reads something like "<code>&lt;Global=TTC_BribeGold&gt;</code> gold and my ring..." instead of a number.</li>
+<li><strong>Affected:</strong> 0.1.0–0.1.3</li>
+<li><strong>Fixed in:</strong> 0.1.4</li>
+<li><strong>Workaround:</strong> Update to 0.1.4. Skyrim doesn't fill in this kind of tag in NPC subtitles, so the amount now appears in your reply: "Make me an offer. (1500 gold)". It still follows the <code>TTC_BribeGold</code> setting. Older saves keep working. Translators: rebuild from 0.1.4.</li>
+<li>Reported by a player.</li>
+</ul>
+<h3>Dialogue or the contract writ shows a raw location tag (like <code>&lt;Alias=AmbushLoc&gt;</code>) instead of the place name</h3>
+<ul>
+<li><strong>Symptom:</strong> When you talk to the quest giver again, or pick a dialogue option after accepting, you see a raw tag instead of a place name. The map marker still works.</li>
+<li><strong>Affected:</strong> versions before 0.1.3 (the accept line before 0.1.2; later dialogue options and notes until 0.1.3)</li>
+<li><strong>Fixed in:</strong> 0.1.2 (accept line) and 0.1.3 (later dialogue and notes)</li>
+<li><strong>Workaround:</strong> Update to 0.1.4. If you still see a raw tag, post a screenshot on the Bugs tab with your mod version and whether you use a translation.</li>
+<li>Reported by a player.</li>
+</ul>
+<h3>Quest stuck because the captain didn't have the payroll ledger</h3>
+<ul>
+<li><strong>Symptom:</strong> The ledger you need isn't on the captain, so the quest can't move on.</li>
+<li><strong>Affected:</strong> versions before 0.1.1</li>
+<li><strong>Fixed in:</strong> 0.1.1 (the ledger is now given by script and rechecked)</li>
+<li><strong>Workaround:</strong> With the sealed orders in your inventory, tell Hjalla "the captain didn't have your ledger". She'll sort you out and the quest continues (0.1.1 and later, works on old saves).</li>
+</ul>
+<hr />
+<h2 id="company-quartermaster">Company Quartermaster</h2>
+<p><strong>Current version: 0.2.4</strong> (15 Oct 2026)</p>
+<h3>OPEN: Brynja's face or skin colour not matching</h3>
+<ul>
+<li><strong>Symptom:</strong> Brynja's face and body don't match. On 0.2.1 her arms, midriff and legs rendered black or dark brown while her face looked normal. On 0.2.2 her body was fixed but her face rendered dark grey.</li>
+<li><strong>Affected:</strong> 0.2.1, 0.2.2</li>
+<li><strong>Fixed in:</strong> 0.2.4 (fix shipped). <strong>Status: Open</strong>, because we're waiting for the reporter to confirm it's gone.</li>
+<li><strong>What 0.2.4 changed:</strong> 0.2.2 gave her body a skin tone that matches her face. 0.2.4 gives her a vanilla Nord look using an Uthgerd template: she takes Uthgerd's face, hair, skin tone and voice. Her name, outfit, behaviour and scripts are unchanged, and no form IDs changed, so saves keep working. The fix applies the next time she loads.</li>
+<li><strong>Workaround:</strong>
+  1. Update to 0.2.4.
+  2. If you use a translated plugin, it must be rebuilt from 0.2.4. An old translated plugin overrides Brynja and brings back her old look.
+  3. Check whether anything else in your load order, such as a FaceGen or NPC appearance pack, changes Brynja (<code>CQM_Brynja</code>, local 000820).
+  4. Still wrong after all that? Post on the Bugs tab with a screenshot and your load order.</li>
+<li>Reported by a player.</li>
+</ul>
+<h3>Brynja looks like a different bandit every time she's hired</h3>
+<ul>
+<li><strong>Symptom:</strong> Each time you summon or hire her she has a different face and gear.</li>
+<li><strong>Affected:</strong> versions before 0.2.1 (reported on 0.2.0)</li>
+<li><strong>Fixed in:</strong> 0.2.1 (she's now a unique NPC with one fixed look, her own iron armour and a sword)</li>
+<li><strong>Workaround:</strong> Update. If you hired her on an older save, dismiss her and hire her again to pick up the fixed look.</li>
+<li>Reported by a player.</li>
+</ul>
+<hr />
+<h2 id="oathbreakers-price">Oathbreaker's Price</h2>
+<p><strong>Current version: 0.1.3</strong> (14 Oct 2026)</p>
+<h3>Quest giver lines or Gerda's ledger show a raw location tag (like <code>&lt;Alias=HideLoc&gt;</code>)</h3>
+<ul>
+<li><strong>Symptom:</strong> You see a raw tag instead of a place name, either on the accept line or in later dialogue or the ledger.</li>
+<li><strong>Affected:</strong> versions before 0.1.3 (the accept line before 0.1.2)</li>
+<li><strong>Fixed in:</strong> 0.1.2 (accept line) and 0.1.3 (later dialogue and the ledger)</li>
+<li><strong>Workaround:</strong> Update to 0.1.3 (saves from 0.1.2 keep working). If you still see a raw tag, post a screenshot on the Bugs tab with your mod version and whether you use a translation.</li>
+<li>Reported by a player.</li>
+</ul>
+<h3>Stuck at "find the fence" because Gerda had no ledger</h3>
+<ul>
+<li><strong>Symptom:</strong> Gerda has Torvald's sword but no ledger, so the quest doesn't move on.</li>
+<li><strong>Affected:</strong> versions before 0.1.1</li>
+<li><strong>Fixed in:</strong> 0.1.1 (the ledger is given by script and rechecked)</li>
+<li><strong>Workaround:</strong> With Torvald's sword in your inventory, tell Sigrun "Gerda had his sword, but no ledger." She'll hand it over. Read it and the quest continues (0.1.1 and later).</li>
+</ul>
+<hr />
+<h2 id="the-barrow-iron-pact">The Barrow-Iron Pact</h2>
+<p><strong>Current version: 0.1.3</strong> (14 Oct 2026)</p>
+<h3>Kjeld's lines show a raw location tag (like <code>&lt;Alias=CryptLoc&gt;</code>)</h3>
+<ul>
+<li><strong>Symptom:</strong> You see a raw tag instead of the crypt's name when you talk to Kjeld.</li>
+<li><strong>Affected:</strong> versions before 0.1.3 (the accept line before 0.1.2)</li>
+<li><strong>Fixed in:</strong> 0.1.2 (accept line) and 0.1.3 (later dialogue)</li>
+<li><strong>Workaround:</strong> Update to 0.1.3 (saves from 0.1.2 keep working). If you still see a raw tag, post a screenshot on the Bugs tab.</li>
+<li>Reported by a player.</li>
+</ul>
+<h3>Quest never moves past "take the iron"</h3>
+<ul>
+<li><strong>Symptom:</strong> The Hollow Warden has no barrow-iron on him.</li>
+<li><strong>Affected:</strong> versions before 0.1.1</li>
+<li><strong>Fixed in:</strong> 0.1.1 (the iron is given by script and rechecked)</li>
+<li><strong>Workaround:</strong> With the burial rite in your inventory, tell Kjeld "The Warden had no iron on him." He'll hand it over (0.1.1 and later).</li>
+</ul>
+<hr />
+<h2 id="the-gray-mane-debt">The Gray-Mane Debt</h2>
+<p><strong>Current version: 0.1.3</strong> (14 Oct 2026)</p>
+<h3>Hrodulf's note shows a raw location tag (like <code>&lt;Alias=ThiefLocation&gt;</code>)</h3>
+<ul>
+<li><strong>Symptom:</strong> The note shows a raw tag instead of the hideout's name.</li>
+<li><strong>Affected:</strong> versions before 0.1.3</li>
+<li><strong>Fixed in:</strong> 0.1.3</li>
+<li><strong>Workaround:</strong> Update to 0.1.3 (saves from 0.1.2 keep working). If you still see a raw tag, post a screenshot on the Bugs tab.</li>
+<li>Reported by a player.</li>
+</ul>
+<h3>Stuck at "Recover the Skyforge pattern" because Brund only had a letter</h3>
+<ul>
+<li><strong>Symptom:</strong> The Skyforge pattern (and sometimes Hrodulf's letter) is missing from Brund, so the quest stalls.</li>
+<li><strong>Affected:</strong> versions before 0.1.2</li>
+<li><strong>Fixed in:</strong> 0.1.1 (pattern and letter given to Brund by script) and 0.1.2 (the stall when Brund only had the letter)</li>
+<li><strong>Workaround:</strong> Update to 0.1.2 or later. With the letter in your inventory, tell Eorlund "Brund didn't have the pattern. Just this letter." He'll hand you the pattern and the quest continues. This also fixes saves that got stuck on older versions.</li>
+</ul>
+<hr />
+<h2 id="the-ledger-of-ash">The Ledger of Ash</h2>
+<p><strong>Current version: 0.1.2</strong> (14 Oct 2026)</p>
+<h3>The Torn Ledger Page shows raw tags (<code>&lt;Alias=Loc1&gt;</code>, Loc2, Loc3)</h3>
+<ul>
+<li><strong>Symptom:</strong> The page shows raw tags instead of the three place names.</li>
+<li><strong>Affected:</strong> versions before 0.1.2</li>
+<li><strong>Fixed in:</strong> 0.1.2</li>
+<li><strong>Workaround:</strong> Update to 0.1.2 (saves from 0.1.1 keep working). If you still see a raw tag, post a screenshot on the Bugs tab.</li>
+<li>Reported by a player.</li>
+</ul>
+<h3>A thrall had no shard, so you can't collect all three</h3>
+<ul>
+<li><strong>Symptom:</strong> You kill an ash thrall but it doesn't drop its shard.</li>
+<li><strong>Affected:</strong> versions before 0.1.1</li>
+<li><strong>Fixed in:</strong> 0.1.1 (shards are given by script and rechecked)</li>
+<li><strong>Workaround:</strong> Tell Aulus "I killed a thrall, but it had no shard." He'll hand over the shard of every dead thrall that never dropped one (0.1.1 and later). Living thralls keep theirs.</li>
+</ul>
+<hr />
+<h2 id="contract-hunter">Contract Hunter</h2>
+<p><strong>Current version: 0.1.3</strong> (11 Oct 2026)</p>
+<h3>The Hunter's Writ never arrives (alternate start or skipped Helgen)</h3>
+<ul>
+<li><strong>Symptom:</strong> No courier ever brings the writ. There's no quest giver: the courier should find you once you're level 3 and past Helgen, usually within a minute of loading a save.</li>
+<li><strong>Affected:</strong> versions before 0.1.3, with some alternate-start or skip-Helgen setups</li>
+<li><strong>Fixed in:</strong> 0.1.3</li>
+<li><strong>Workaround:</strong> Update to 0.1.3. If it still doesn't come, check your Papyrus log for <code>CHT_</code> lines (they say why the writ is waiting). As a fallback, in the console:
+  <code>help "hunter's writ" 4
+  player.additem &lt;the ID it shows&gt; 1</code>
+  Then read the writ from your inventory.</li>
+</ul>
+<h3>Wrye Bash can't load the plugin</h3>
+<ul>
+<li><strong>Symptom:</strong> Wrye Bash fails to load the plugin.</li>
+<li><strong>Affected:</strong> versions before 0.1.2</li>
+<li><strong>Fixed in:</strong> 0.1.2 (no gameplay changes)</li>
+<li><strong>Workaround:</strong> Update.</li>
+</ul>
+<h3>Bounty notices stop at a raw tag (<code>&lt;Alias=Target&gt;</code> or <code>&lt;Alias=ContractLocation&gt;</code>)</h3>
+<ul>
+<li><strong>Symptom:</strong> The bounty notice text cuts off at the tag instead of naming the outlaw and the place.</li>
+<li><strong>Affected:</strong> 0.1.0</li>
+<li><strong>Fixed in:</strong> 0.1.1</li>
+<li><strong>Workaround:</strong> Update, and remove any hand-patched copy of the plugin you made. New notices will name the outlaw and the place.</li>
+<li>Thanks to a player for tracking this down.</li>
+</ul>
+<h3>Saving and loading stops courier letters, bounty deadlines or avengers (game version 1.6)</h3>
+<ul>
+<li><strong>Symptom:</strong> After a save and load, couriers, deadlines or avengers stop happening.</li>
+<li><strong>Affected:</strong> versions before 0.1.1</li>
+<li><strong>Fixed in:</strong> 0.1.1 (the installer now includes the SEQ file needed on 1.6)</li>
+<li><strong>Workaround:</strong> Update.</li>
+</ul>
+<hr />
+<h2 id="steel-oath">Steel Oath</h2>
+<p><strong>Current version: 0.1.1</strong> (11 Oct 2026)</p>
+<h3>Oath of Close Quarters breaks during Kindred Judgment (Dawnguard)</h3>
+<ul>
+<li><strong>Symptom:</strong> Using Auriel's Bow on Harkon, which the fight needs, breaks your oath.</li>
+<li><strong>Affected:</strong> 0.1.0</li>
+<li><strong>Fixed in:</strong> 0.1.1 (Auriel's Bow is allowed from "Confront Harkon" until the quest ends; any other bow, or Auriel's Bow outside that fight, still breaks it)</li>
+<li><strong>Workaround:</strong> Update before the fight. On 0.1.0, renounce the oath before the fight to avoid the oathbreaker penalty (you still get the 72-hour cooldown). Or, in the console, <code>set SOT_CooldownHours to 0</code> before renouncing, swear again after Harkon, then set it back to 72.</li>
+</ul>
+<hr />
+<h2 id="blackshield-company">Blackshield Company</h2>
+<p><strong>Current version: 0.1.2</strong> (10 Oct 2026)</p>
+<h3>Wrye Bash can't load the plugin ("list index out of range")</h3>
+<ul>
+<li><strong>Symptom:</strong> Wrye Bash fails with "list index out of range".</li>
+<li><strong>Affected:</strong> versions before 0.1.2</li>
+<li><strong>Fixed in:</strong> 0.1.2 (no gameplay changes)</li>
+<li><strong>Workaround:</strong> Update.</li>
+</ul>
+<h3>The courier with the recruitment letter never shows up (game version 1.6)</h3>
+<ul>
+<li><strong>Symptom:</strong> The recruitment letter never arrives. On 1.5.97 it worked.</li>
+<li><strong>Affected:</strong> 0.1.0 on game version 1.6</li>
+<li><strong>Fixed in:</strong> 0.1.1 (the installer now includes the missing SEQ file, and loading a save restarts the recruitment timer)</li>
+<li><strong>Workaround:</strong> Update and load your save. The letter comes once you're level 2 or higher and past Helgen, usually within a couple of in-game days. Still nothing? Post your game version and any <code>BSC_</code> lines from your Papyrus log on the Bugs tab.</li>
+</ul>
+<hr />
+<h2 id="champions-reforge">Champion's Reforge</h2>
+<p><strong>Current version: 0.1.1</strong> (10 Oct 2026)</p>
+<h3>The Avenicci Forging Notes aren't on any corpse</h3>
+<ul>
+<li><strong>Symptom:</strong> You can't find the forging notes, so you're stuck on "Recover the forging notes". The Ash-Hand Forgebreaker could also be standing out at the map marker instead of with the fort's bandits.</li>
+<li><strong>Affected:</strong> versions before 0.1.1</li>
+<li><strong>Fixed in:</strong> 0.1.1 (the notes are given to the Ash-Hand Forgebreaker by script and rechecked when he loads and when he dies; he now stands at the fort's boss spot)</li>
+<li><strong>Workaround:</strong> Update to 0.1.1. The notes are on the Ash-Hand Forgebreaker (the quest marker points at him), not on the regular bandits. On an existing save the fix kicks in the next time he loads. If you already carry the notes, the quest moves on at the next check.</li>
+<li><strong>Last-resort console fallback:</strong> make a backup save first, then type <code>setstage CRF_Main 20</code>. That skips ahead to bringing the notes back. You still need 4 steel, 2 corundum and 2 leather for Adrianne's hand-over. The objectives may not update, but you still get the harness reward. If you need this, please tell us on the Bugs tab so we can find out why.</li>
+</ul>
+<hr />
+<h2 id="roadwarden">Roadwarden</h2>
+<p><strong>Current version: 0.1.1</strong> (10 Oct 2026)</p>
+<h3>I never see any encounters</h3>
+<ul>
+<li><strong>Symptom:</strong> You travel the roads but no encounters ever happen.</li>
+<li><strong>Affected:</strong> 0.1.0 (too strict: riding a horse blocked encounters, big stretches of road were filtered out, and encounters were rare)</li>
+<li><strong>Fixed in:</strong> 0.1.1 (mounted travel counts, fewer roads are excluded, encounters are more frequent, and a "Roadwarden active" notice appears on load)</li>
+<li><strong>Workaround:</strong> Update to 0.1.1 and look for "Roadwarden active" when you load. Fast travel and carriages never trigger encounters. Still nothing? In the console (~):
+  1. <code>getqr RWD_RoadQuest</code> should say 1. If it says 0, the mod isn't running, so please report it.
+  2. On an older save, type <code>show RWD_ChancePct</code>. If it still shows the old values, set <code>RWD_CheckSeconds</code> to 45, <code>RWD_ChancePct</code> to 15 and <code>RWD_CooldownHours</code> to 4.
+  3. On foot, outside town, walk a road for about 30 seconds, then <code>set RWD_ForceNext to 1</code> and keep walking. Highwaymen should appear in about 10 seconds.
+  4. If that fails, turn on Papyrus logging and report the <code>RWD_</code> lines with your game version.</li>
+</ul>
+<hr />
+<h2 id="no-known-issues">No known issues</h2>
+<p>None of these have any reported issues right now: <strong>Scarred Steel</strong> 0.2.0, <strong>War Banners</strong> 0.2.0, <strong>Ember Smithing</strong> 0.1.0, <strong>Blackshield Codex</strong> 0.1.0, <strong>Sellsword Roster</strong> 0.1.0 and <strong>Rival Companies</strong> 0.1.0 (GitHub only; report bugs as a GitHub issue at github.com/Blackshield-Company/rival-companies).</p>
+<hr />
+<h2 id="how-to-report-a-bug">How to report a bug</h2>
+<p>Use the <strong>Bugs</strong> tab on the mod's Nexus page (author: synthalorian) and include:</p>
+<ol>
+<li><strong>The mod and its version</strong> (for example, Contract Hunter 0.1.3) and your game version (1.5.97 or 1.6.x)</li>
+<li><strong>Your load order</strong> (a LOOT-sorted list or a screenshot from your mod manager is fine)</li>
+<li><strong>Steps to reproduce:</strong> what you did, what you expected, and what happened. For text or appearance problems, add a screenshot.</li>
+<li>If you can, the Papyrus log lines that start with the mod's prefix (for example <code>TTC_</code>, <code>CQM_</code> or <code>RWD_</code>). Turn on logging in <code>Skyrim.ini</code> under <code>[Papyrus]</code> with <code>bEnableLogging=1</code> and <code>bEnableTrace=1</code>.</li>
+</ol>
+<p>We read every report. Thanks for helping make these mods better!</p>
+<p>Blackshield Company</p>
+    </div>
+  </main>
+
+  <!-- ===== SECTION: FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a href="https://synthalorian.pages.dev">Personal portfolio</a>
+      <p class="footer-mascot"><img src="/assets/img/knight/knight-idle.svg" alt="Knight A, the Blackshield Company mascot" width="48" height="42" loading="lazy" decoding="async"> © 2026 synthalorian</p>
+    </div>
+  </footer>
+  <!-- ===== END SECTION: FOOTER ===== -->
+</body>
+</html>
