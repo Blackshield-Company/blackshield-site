@@ -1,11 +1,16 @@
 :root {
-  --char: #141312;
-  --char-2: #1d1b19;
-  --blood: #b3201c;
-  --ember: #e0782a;
-  --parchment: #e8dcc2;
-  --dim: rgba(232, 220, 194, 0.74);
-  --line: rgba(232, 220, 194, 0.16);
+  /* Blackshield palette: black, blood, steel, bone. Every other tone is a mix of these four. */
+  --bg: #101014;
+  --blood: #c1121f;
+  --steel: #8f959c;
+  --bone: #d8d3c8;
+  --char: var(--bg);
+  --char-2: #1a1a1d;
+  --blood-text: #cc7274;   /* blood 50% with bone: small red text on black */
+  --blood-solid: #9e121d;  /* blood 80% with black: a fill that holds bone text */
+  --parchment: var(--bone);
+  --dim: rgba(216, 211, 200, 0.74);
+  --line: rgba(216, 211, 200, 0.16);
   --serif: "Cinzel", "Trajan Pro", Georgia, serif;
   --sans: Georgia, "Palatino Linotype", Palatino, serif;
   --wrap: 72rem;
@@ -39,7 +44,7 @@ img {
 }
 
 a {
-  color: var(--ember);
+  color: var(--blood-text);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 }
@@ -49,7 +54,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 2px solid var(--ember);
+  outline: 2px solid var(--steel);
   outline-offset: 3px;
 }
 
@@ -57,7 +62,7 @@ a:hover {
   position: absolute;
   left: 1rem;
   top: -4rem;
-  background: var(--blood);
+  background: var(--blood-solid);
   color: var(--parchment);
   padding: 0.5rem 0.8rem;
   z-index: 40;
@@ -111,7 +116,7 @@ p {
 
 .eyebrow {
   margin: 0 0 0.7rem;
-  color: var(--ember);
+  color: var(--blood-text);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -121,7 +126,7 @@ p {
   margin-top: 0.9rem;
   max-width: 42rem;
   padding-left: 0.85rem;
-  border-left: 3px solid var(--ember);
+  border-left: 3px solid var(--blood-text);
   color: var(--dim);
   font-family: Georgia, serif;
   font-style: italic;
@@ -131,9 +136,8 @@ p {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(20, 19, 18, 0.96);
-  border-bottom: 1px solid rgba(179, 32, 28, 0.7);
-  box-shadow: 0 1px 0 rgba(224, 120, 42, 0.25);
+  background: rgba(16, 16, 20, 0.96);
+  border-bottom: 1px solid rgba(193, 18, 31, 0.7);
 }
 
 .nav-inner {
@@ -161,7 +165,7 @@ p {
   height: 46px;
   flex: none;
   object-fit: cover;
-  border: 1px solid rgba(224, 120, 42, 0.55);
+  border: 1px solid rgba(143, 149, 156, 0.55);
 }
 
 .brand-name {
@@ -186,7 +190,7 @@ p {
 }
 
 .nav-links a:hover {
-  color: var(--ember);
+  color: var(--blood-text);
 }
 
 .hero {
@@ -198,35 +202,6 @@ p {
   min-height: calc(100svh - 4.25rem);
   overflow: hidden;
   background: var(--char);
-}
-
-.hero-bg,
-.band-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.hero-bg {
-  object-position: 78% center;
-}
-
-.hero-shade {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    to right,
-    #141312 0%,
-    rgba(20, 19, 18, 0.94) 22%,
-    rgba(20, 19, 18, 0.78) 42%,
-    rgba(20, 19, 18, 0.34) 64%,
-    rgba(20, 19, 18, 0.12) 100%
-  );
 }
 
 .hero-copy {
@@ -255,9 +230,9 @@ p {
 .btn {
   display: inline-block;
   padding: 0.72rem 1.15rem;
-  background: var(--blood);
+  background: var(--blood-solid);
   color: var(--parchment);
-  border: 1px solid var(--blood);
+  border: 1px solid var(--blood-solid);
   text-decoration: none;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -265,26 +240,24 @@ p {
 }
 
 .btn:hover {
-  background: #8e1916;
+  background: #7a0d16;
   color: var(--parchment);
 }
 
 .btn-line {
   background: transparent;
-  border-color: var(--ember);
+  border-color: var(--steel);
   color: var(--parchment);
 }
 
 .btn-line:hover {
-  background: rgba(224, 120, 42, 0.14);
+  background: rgba(143, 149, 156, 0.16);
   color: var(--parchment);
 }
 
 .pitch {
   padding: 4.5rem 0;
-  background:
-    linear-gradient(180deg, rgba(179, 32, 28, 0.18), transparent 2.5rem),
-    var(--char-2);
+  background: var(--char-2);
   border-bottom: 1px solid var(--line);
 }
 
@@ -309,12 +282,7 @@ p {
   margin: 0;
 }
 
-.plate img {
-  width: 100%;
-  height: auto;
-  border: 1px solid rgba(224, 120, 42, 0.5);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-}
+
 
 .plate figcaption {
   margin-top: 0.55rem;
@@ -335,7 +303,7 @@ p {
 
 .section-head h2 {
   padding-bottom: 0.55rem;
-  border-bottom: 1px solid rgba(179, 32, 28, 0.65);
+  border-bottom: 1px solid rgba(193, 18, 31, 0.65);
 }
 
 .grid {
@@ -376,7 +344,7 @@ p {
 }
 
 .card h3 a:hover {
-  color: var(--ember);
+  color: var(--blood-text);
 }
 
 .badge-row {
@@ -397,19 +365,19 @@ p {
 }
 
 .badge-soon {
-  background: var(--blood);
+  background: var(--blood-solid);
   color: var(--parchment);
 }
 
 .badge-design {
   background: transparent;
-  color: var(--ember);
-  border-color: var(--ember);
+  color: var(--blood-text);
+  border-color: var(--blood-text);
 }
 
 .badge-free {
-  background: var(--ember);
-  color: #141312;
+  background: var(--bone);
+  color: #101014;
 }
 
 .badge-beta {
@@ -424,19 +392,7 @@ p {
   overflow: hidden;
   padding: 4.5rem 0;
   background: var(--char);
-}
-
-.band-bg {
-  object-position: center;
-}
-
-.band-shade {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(to right, rgba(20, 19, 18, 0.92), rgba(20, 19, 18, 0.84) 48%, rgba(20, 19, 18, 0.9)),
-    rgba(20, 19, 18, 0.72);
+  border-block: 1px solid var(--line);
 }
 
 .band .wrap {
@@ -445,14 +401,14 @@ p {
 }
 
 .card-solid {
-  background: rgba(29, 27, 25, 0.94);
+  background: rgba(26, 26, 29, 0.94);
 }
 
 .mod-art {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   margin: 0 0 0.85rem;
-  border: 1px solid rgba(179, 32, 28, 0.45);
+  border: 1px solid rgba(193, 18, 31, 0.45);
   background: var(--char);
   position: relative;
 }
@@ -490,7 +446,7 @@ p {
 .repo-group {
   background: var(--char-2);
   border: 1px solid var(--line);
-  border-top: 2px solid var(--ember);
+  border-top: 2px solid var(--blood-text);
   padding: 1.1rem 1.15rem 0.4rem;
   min-width: 0;
 }
@@ -506,7 +462,7 @@ p {
 }
 
 .repo-group h3 a:hover {
-  color: var(--ember);
+  color: var(--blood-text);
 }
 
 .repo-list {
@@ -530,7 +486,7 @@ p {
 }
 
 .repo-list a:hover {
-  color: var(--ember);
+  color: var(--blood-text);
 }
 
 .repo-list span {
@@ -549,7 +505,7 @@ p {
 
 .source-group > h3 {
   margin: 0 0 0.75rem;
-  color: var(--ember);
+  color: var(--blood-text);
   font-size: 0.92rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -596,7 +552,7 @@ a.card-source {
 }
 
 .contact-label {
-  color: var(--ember);
+  color: var(--blood-text);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -608,7 +564,7 @@ a.card-source {
 }
 
 .contact-list a:hover {
-  color: var(--ember);
+  color: var(--blood-text);
 }
 
 .site-footer {
@@ -633,7 +589,7 @@ a.card-source {
 }
 
 .footer-inner a:hover {
-  color: var(--ember);
+  color: var(--blood-text);
 }
 
 .footer-inner p {
@@ -659,15 +615,6 @@ a.card-source {
     align-items: flex-end;
     min-height: 78vh;
     min-height: 78svh;
-  }
-
-  .hero-shade {
-    background: linear-gradient(
-      to right,
-      rgba(20, 19, 18, 0.96) 0%,
-      rgba(20, 19, 18, 0.9) 58%,
-      rgba(20, 19, 18, 0.62) 100%
-    );
   }
 
   .hero-copy {
@@ -712,6 +659,10 @@ a.card-source {
     flex-direction: column;
   }
 
+  .card-top h3 {
+    flex: none;
+  }
+
   .contact-list li {
     grid-template-columns: 1fr;
     gap: 0.2rem;
@@ -740,20 +691,28 @@ a.card-source {
   }
 }
 
-.hero-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.4rem;padding:0;max-width:34rem}
-.hero-tags li{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#e8dcc4;border:1px solid rgba(179,32,28,.7);background:rgba(10,8,8,.55);padding:.25rem .55rem}
+.hero-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin:1.3rem 0 1.4rem;padding:0;max-width:34rem}
+.hero-tags li{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone);border:1px solid var(--steel);background:rgba(16,16,20,.55);padding:.25rem .55rem}
 
 .hero-copy {
   z-index: 3;
 }
 
-.hero-ken {
+/* Hero art: the black knight on a plain black field. No painted backdrop. */
+.hero-art {
   position: absolute;
-  inset: -14%;
+  inset: 0;
   z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: max(var(--pad), calc((100% - var(--wrap)) / 2));
   pointer-events: none;
-  transform-origin: 68% 46%;
-  animation: kenburns 30s ease-in-out infinite alternate;
+}
+
+.hero-art .knight {
+  --k: 14;
+  border-bottom: 2px solid var(--blood);
 }
 
 .crest {
@@ -762,49 +721,6 @@ a.card-source {
   display: block;
   width: 46px;
   height: 46px;
-  isolation: isolate;
-}
-
-.crest::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  background: radial-gradient(circle, rgba(224, 120, 42, 0.85) 0%, rgba(179, 32, 28, 0.4) 46%, transparent 72%);
-  opacity: 0.28;
-  animation: crest-pulse 4.8s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.crest img {
-  position: relative;
-  z-index: 1;
-}
-
-.embers {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.embers span {
-  position: absolute;
-  bottom: -4%;
-  left: var(--x, 50%);
-  width: var(--s, 3px);
-  height: var(--s, 3px);
-  border-radius: 50%;
-  background: var(--c, var(--ember));
-  box-shadow: 0 0 6px var(--c, var(--ember));
-  opacity: 0;
-  pointer-events: none;
-  animation-name: ember-rise;
-  animation-duration: var(--t, 10s);
-  animation-delay: var(--delay, 0s);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
 }
 
 .hero-copy .eyebrow,
@@ -825,72 +741,9 @@ a.card-source {
   isolation: isolate;
 }
 
-.site-nav::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: var(--blood);
-  box-shadow: 0 0 12px 1px rgba(224, 120, 42, 0.75);
-  opacity: 0.4;
-  animation: accent-flicker 3.4s ease-in-out infinite;
-  pointer-events: none;
-}
-
 .site-footer {
   position: relative;
   isolation: isolate;
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 3px;
-  background: var(--blood);
-  box-shadow: 0 0 14px 1px rgba(224, 120, 42, 0.7);
-  opacity: 0.4;
-  animation: accent-flicker 3.8s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.hero-tags li {
-  position: relative;
-  isolation: isolate;
-}
-
-.hero-tags li::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  box-shadow: 0 0 8px rgba(179, 32, 28, 0.85);
-  opacity: 0.35;
-  animation: accent-flicker 2.8s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.hero-tags li:nth-child(odd)::after { animation-delay: 0.45s; }
-.hero-tags li:nth-child(3n)::after { animation-delay: 1.15s; }
-
-.badge-soon {
-  position: relative;
-  isolation: isolate;
-}
-
-.badge-soon::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  box-shadow: 0 0 8px 1px rgba(224, 120, 42, 0.8);
-  opacity: 0.4;
-  animation: accent-flicker 2.7s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
 }
 
 .nav-links a {
@@ -904,7 +757,7 @@ a.card-source {
   bottom: -0.2em;
   width: 100%;
   height: 1px;
-  background: var(--ember);
+  background: var(--blood);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.32s ease;
@@ -914,39 +767,6 @@ a.card-source {
 .nav-links a:hover::after,
 .nav-links a:focus-visible::after {
   transform: scaleX(1);
-}
-
-.btn {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  z-index: 0;
-}
-
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 32%, rgba(255, 236, 210, 0.55) 50%, transparent 68%);
-  transform: translateX(-120%);
-  transition: transform 0.6s ease;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-.btn:hover::before,
-.btn:focus-visible::before {
-  transform: translateX(120%);
-}
-
-.btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 14px rgba(255, 186, 96, 0.7);
-  opacity: 0.28;
-  animation: accent-flicker 3s ease-in-out infinite;
-  pointer-events: none;
 }
 
 .btn:focus-visible {
@@ -971,8 +791,7 @@ a.card-source {
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: var(--ember);
-  box-shadow: 0 0 8px rgba(224, 120, 42, 0.65);
+  background: var(--blood);
   transform: scaleX(1);
   transform-origin: left center;
   pointer-events: none;
@@ -994,28 +813,11 @@ html.js .reveal.is-visible .pitch-copy h2::after {
   z-index: 0;
 }
 
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  box-shadow:
-    inset 0 0 0 1px rgba(179, 32, 28, 0.9),
-    0 0 18px rgba(224, 120, 42, 0.42),
-    0 0 4px rgba(179, 32, 28, 0.55);
-  transition: opacity 0.35s ease;
-}
-
 .card:hover,
 .card:focus-within {
   transform: translateY(-0.35rem);
   z-index: 1;
-}
-
-.card:hover::after,
-.card:focus-within::after {
-  opacity: 1;
+  border-color: var(--blood);
 }
 
 .grid > .card:nth-child(6n + 1) { --reveal-delay: 0.02s; }
@@ -1043,28 +845,6 @@ html.js .card.reveal.is-visible:focus-within {
   transition-delay: 0s;
 }
 
-@keyframes kenburns {
-  from { transform: scale(1) translate3d(0, 0, 0); }
-  to { transform: scale(1.12) translate3d(-3.5%, -2%, 0); }
-}
-
-@keyframes ember-rise {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 8%, 0) scale(0.7);
-  }
-  14% {
-    opacity: 0.6;
-  }
-  68% {
-    opacity: 0.35;
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(var(--drift, 0px), -108vh, 0) scale(0.4);
-  }
-}
-
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -1073,26 +853,6 @@ html.js .card.reveal.is-visible:focus-within {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes accent-flicker {
-  0%, 100% { opacity: 0.28; }
-  16% { opacity: 0.62; }
-  28% { opacity: 0.22; }
-  46% { opacity: 0.5; }
-  63% { opacity: 0.26; }
-  82% { opacity: 0.58; }
-}
-
-@keyframes crest-pulse {
-  0%, 100% { opacity: 0.22; }
-  50% { opacity: 0.62; }
-}
-
-@media (max-width: 800px) {
-  .embers span:nth-child(n + 8) {
-    display: none;
   }
 }
 
@@ -1108,10 +868,6 @@ html.js .card.reveal.is-visible:focus-within {
     transition: none !important;
   }
 
-  .embers {
-    display: none !important;
-  }
-
   html.js .reveal,
   html.js .reveal:not(.hero),
   html.js .reveal:not(.hero).is-visible,
@@ -1119,8 +875,6 @@ html.js .card.reveal.is-visible:focus-within {
   html.js .card.reveal.is-visible:focus-within,
   .card:hover,
   .card:focus-within,
-  .card:hover .mod-art img,
-  .card:focus-within .mod-art img,
   .hero-copy .eyebrow,
   .hero-copy h1,
   .hero-copy .lede,
@@ -1136,28 +890,28 @@ html.js .card.reveal.is-visible:focus-within {
   html.js .reveal.is-visible .pitch-copy h2::after {
     transform: scaleX(1) !important;
   }
-
-  .hero-ken {
-    inset: 0;
-    transform: none !important;
-  }
-
-  .btn::before,
-  .btn:hover::before,
-  .btn:focus-visible::before {
-    transform: translateX(-120%) !important;
-  }
 }
 
-/* Knight A, the company mascot. Animated SVGs hold their first frame under reduced motion. */
-/* Knight A in the bottom-left corner of every page. A button: hover, focus, click. */
+/* The Blackshield knight: canonical 32x28 pixel frames, strips in assets/img/knight/.
+   --k is the integer pixel scale. Reduced motion shows frame 0. */
+.knight { --k: 8; display: block; position: relative; overflow: hidden; width: calc(32px * var(--k)); height: calc(28px * var(--k)); }
+.knight > img { display: block; height: 100%; max-width: none; image-rendering: pixelated; animation-iteration-count: infinite; animation-timing-function: steps(4, end); animation-name: knight-run; }
+.knight-idle > img     { width: 400%; animation-duration: 1280ms; }
+.knight-thinking > img { width: 400%; animation-duration: 1040ms; }
+.knight-working > img  { width: 400%; animation-duration: 680ms; }
+.knight-error > img    { width: 400%; animation-duration: 520ms; }
+.knight-success > img  { width: 300%; animation-duration: 720ms; animation-timing-function: steps(3, end); }
+@keyframes knight-run { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) { .knight > img { animation: none; } }
+/* Hero and 404 knights play three loops, then hold. */
+.hero-art .knight > img, .knight-once > img { animation-iteration-count: 3; }
+
+/* Knight in the bottom-left corner of every page. A button: hover, focus, click. */
 .corner-knight {
   position: fixed;
   left: 1rem;
   bottom: 1rem;
   z-index: 20;
-  width: 80px;
-  height: 70px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -1166,41 +920,38 @@ html.js .card.reveal.is-visible:focus-within {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.corner-knight img {
-  width: 100%;
-  height: 100%;
-  image-rendering: pixelated;
-  pointer-events: none;
-  user-select: none;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .55));
-  transition: transform .18s ease-out;
-}
-.corner-knight:hover img, .corner-knight:focus-visible img { transform: translateY(-3px); }
+.corner-knight .knight { --k: 3; pointer-events: none; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .6)); transition: transform .18s ease-out; }
+.corner-knight:hover .knight, .corner-knight:focus-visible .knight { transform: translateY(-3px); }
 .corner-knight:focus { outline: none; }
-.corner-knight:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
-@media (max-width: 860px) { .corner-knight { width: 64px; height: 56px; left: .6rem; bottom: .6rem; } }
+.corner-knight:focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; }
+@media (max-width: 860px) { .corner-knight { left: .6rem; bottom: .6rem; } .corner-knight .knight { --k: 2; } }
 @media (max-width: 480px) { .corner-knight { display: none; } }
-@media (prefers-reduced-motion: reduce) { .corner-knight img { transition: none; } .corner-knight:hover img, .corner-knight:focus-visible img { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .corner-knight .knight { transition: none; } .corner-knight:hover .knight, .corner-knight:focus-visible .knight { transform: none; } }
 @media print { .corner-knight { display: none; } }
 .footer-mascot { display: flex; align-items: center; gap: .6rem; }
-.footer-mascot img { width: 48px; height: 42px; image-rendering: pixelated; }
+.footer-mascot img { width: 64px; height: 56px; image-rendering: pixelated; }
+.plate .knight { --k: 12; margin-inline: auto; max-width: 100%; border: 1px solid var(--line); border-bottom: 2px solid var(--blood); background: var(--char-2); }
+@media (max-width: 800px) { .hero-art { align-items: flex-start; padding-top: 1.25rem; opacity: .35; } .hero-art .knight { --k: 9; } .plate .knight { --k: 8; } }
+@media (max-width: 480px) { .plate .knight { --k: 6; } }
 
 /* Keep section labels clear of the fixed header when jumping from the nav. */
 section[id] { scroll-margin-top: 88px; }
 
 /* ===== Known issues page (mods/known-issues/) ===== */
 .ki { max-width: 52rem; }
-.ki h1 { margin: 0; padding-bottom: 0.55rem; border-bottom: 1px solid rgba(179, 32, 28, 0.65); }
-.ki h2 { margin: 2.4rem 0 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(179, 32, 28, 0.65); }
+.ki h1 { margin: 0; padding-bottom: 0.55rem; border-bottom: 1px solid rgba(193, 18, 31, 0.65); }
+.ki h2 { margin: 2.4rem 0 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(193, 18, 31, 0.65); }
 .ki h3 { margin: 1.6rem 0 0.5rem; font-size: 1.1rem; }
 .ki p { margin: 0.7rem 0; }
 .ki ul, .ki ol { margin: 0.5rem 0; padding-left: 1.3rem; }
 .ki li { margin: 0.3rem 0; }
-.ki hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.08); margin: 2rem 0; }
-.ki code { font-size: 0.9em; padding: 0.05em 0.3em; background: rgba(255, 255, 255, 0.06); border-radius: 3px; }
-.ki pre { overflow-x: auto; padding: 0.8rem 1rem; background: rgba(0, 0, 0, 0.35); border-left: 3px solid var(--ember); }
+.ki hr { border: 0; border-top: 1px solid rgba(216, 211, 200, 0.08); margin: 2rem 0; }
+.ki code { font-size: 0.9em; padding: 0.05em 0.3em; background: rgba(216, 211, 200, 0.06); border-radius: 3px; }
+.ki pre { overflow-x: auto; padding: 0.8rem 1rem; background: rgba(0, 0, 0, 0.35); border-left: 3px solid var(--blood-text); }
 .ki pre code { background: none; padding: 0; }
 .ki-table { overflow-x: auto; margin: 1rem 0; }
 .ki table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
-.ki th, .ki td { text-align: left; padding: 0.5rem 0.7rem; border: 1px solid rgba(255, 255, 255, 0.1); vertical-align: top; }
-.ki th { color: var(--ember); }
+.ki th, .ki td { text-align: left; padding: 0.5rem 0.7rem; border: 1px solid rgba(216, 211, 200, 0.1); vertical-align: top; }
+.ki th { color: var(--blood-text); }
+
+.plate figcaption { text-align: center; }
